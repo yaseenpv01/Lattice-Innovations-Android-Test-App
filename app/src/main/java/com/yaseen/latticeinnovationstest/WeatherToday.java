@@ -15,6 +15,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -56,6 +57,8 @@ public class WeatherToday extends AppCompatActivity {
             }
         });
 
+        mRequestQueue = Volley.newRequestQueue(WeatherToday.this);
+
     }
 
     private void getDataFromCity(String citynamestr) {
@@ -70,12 +73,12 @@ public class WeatherToday extends AppCompatActivity {
 
                 try {
 
-                    JSONArray postOfficeArray = response.getJSONArray("PostOffice");
+                    JSONArray locationArray = response.getJSONArray("location");
                     if (response.getString("Status").equals("Error")) {
-                        tempcenttv.setText("Pin code is not valid.");
+                        tempcenttv.setText("City is not valid.");
                     } else {
 
-                        JSONObject obj = postOfficeArray.getJSONObject(0);
+                        JSONObject obj = locationArray.getJSONObject(0);
 
                         String tempcenttext = obj.getString("temp_c");
                         String tempfhtext = obj.getString("temp_f");
@@ -91,7 +94,7 @@ public class WeatherToday extends AppCompatActivity {
                 } catch (JSONException e) {
 
                     e.printStackTrace();
-                    tempcenttv.setText("Pin code is not valid");
+                    tempcenttv.setText("City is not valid");
                 }
             }
         }, new Response.ErrorListener() {
