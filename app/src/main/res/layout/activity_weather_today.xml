@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WeatherToday"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="120dp"
+        >
+
+        <EditText
+            android:id="@+id/citynameedittext"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:backgroundTint="@color/white"
+            android:hint="City Name"
+            android:inputType="textCapWords"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="12sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/showresultbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Results"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        ></Button>
+
+    <TextView
+        android:id="@+id/tempcent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Temperature in Centigrade:"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/tempfh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Temperature in Farenheit:"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/latitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latitude:"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/longitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Longitude:"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        ></TextView>
+</LinearLayout>
